@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function button(props) {
+import "./Buttons.css";
+
+export default function Buttons(props) {
   return (
     <div>
       <Link to={`/users/${props.id}`}>

@@ -1,33 +1,50 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "./User.css";
 
-export default function User({ persons }) {
+export default function User({ users }) {
   const { id } = useParams();
   return (
     <div>
-      {persons
-        .filter((person) => person.id == id)
-        .map((person) => {
+      {users
+        .filter((user) => user.id == id)
+        .map((user) => {
           return (
-            <div key={id}>
-              <h1>Name: {person.name}</h1>
-              <h1>Username: {person.username}</h1>
-              <h1>Email: {person.email}</h1>
-              <h1>Phone: {person.phone}</h1>
-              <h1>Company: {person.website}</h1>
-              <h1>Address:</h1>
+            <div key={id} className="user">
               <ul>
-                <li>Street: {person.address.street}</li>
-                <li>Suite: {person.address.suite}</li>
-                <li>City: {person.address.city}</li>
-                <li>Zipcode: {person.address.zipcode}</li>
+                <li>
+                  <h1>Name: {user.name}</h1>
+                </li>
+                <li>
+                  <h1>Username: {user.username}</h1>
+                </li>
+                <li>
+                  <h1>Email: {user.email}</h1>
+                </li>
+                <li>
+                  <h1>Phone: {user.phone}</h1>
+                </li>
+                <li>
+                  <h1>Company: {user.company.name}</h1>
+                </li>
+                <li>
+                  <h1>Website: {user.website}</h1>
+                </li>
+                <li>
+                  <h1>Address:</h1>
+                </li>
+                <ul id="address">
+                  <li>Street: {user.address.street}</li>
+                  <li>Suite: {user.address.suite}</li>
+                  <li>City: {user.address.city}</li>
+                  <li>Zipcode: {user.address.zipcode}</li>
+                </ul>
               </ul>
-              <div>
-                <Link to={`/`}>
-                  <button>Home</button>
-                </Link>
-              </div>
+
+              <Link to={`/users`}>
+                <button id="home">Home</button>
+              </Link>
             </div>
           );
         })}
