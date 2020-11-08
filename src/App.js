@@ -16,7 +16,7 @@ function App() {
 
   return (
     <Router>
-      <Route exact path="/users" component={Cards}>
+      <Route exact path="/" component={Cards}>
         <div className="App">
           <Cards cards={person} />
         </div>

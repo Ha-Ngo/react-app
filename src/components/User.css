@@ -1,21 +1,37 @@
 li {
-    font-size: 1.5rem;
-    line-height: 2rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
-.user {
-    border: 3px solid black;
-    width: 40%;
-    margin: auto;
-    margin-top: 3rem;
-    padding: 1rem 0;
-    height: auto;
-    overflow: hidden;
-    background-color: #008891;
+.container-user {
+  display: flex-block;
+  border: 3px solid black;
+  margin: auto;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  height: auto;
+  overflow: hidden;
+  background-color: #008891;
 }
+
 #home {
-    float: right;
-    margin-right: 1rem;
-} 
+  float: right;
+  margin-right: 1rem;
+}
 #address {
-    margin-top: 1rem;
+  margin-top: 1rem;
+}
+@media only screen and (max-width: 600px) {
+    .container-user {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .container-user {
+        width: 80%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .container-user {
+        width: 40%;
+    }
 }
